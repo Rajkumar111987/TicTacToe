@@ -84,12 +84,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boolean isWon = false;
         int cValue = count-1;
 
+        //Add the values
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < count; j++) {
                 field[i][j] = buttons[i][j].getText().toString();
             }
         }
 
+        //check for horizontal
         for (int i = 0; i < count; i++) {
             if(!field[i][0].equals("")){
                 for(int j= 1; j<count ; j++){
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //check for vertical
         for (int i = 0; i < count; i++) {
             if (!field[0][i].equals("")) {
                 for(int j= 1; j<count ; j++){
@@ -119,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //check for diagonal
         if (!field[0][0].equals("")) {
             for(int j= 1; j<count ; j++){
                 isWon = field[0][0].equals(field[j][j]);
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //check for diagonal
         if (!field[0][cValue].equals("")) {
             for(int j= 1; j<count ; j++){
                 isWon = field[0][cValue].equals(field[j][cValue- j]);
